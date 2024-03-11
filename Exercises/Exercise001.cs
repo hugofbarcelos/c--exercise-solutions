@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
+using System.Linq;
 using Exercises.Models;
 
 namespace Exercises
@@ -42,8 +43,14 @@ namespace Exercises
 
         public string Reverse(string sentence)
         {
-            // Replace the exception statement below with your code!
-            throw new NotImplementedException();
+            if (String.IsNullOrEmpty(sentence)) return sentence;
+            char[] chars = sentence.ToCharArray();
+            string answer = "";
+            foreach (var item in chars.Reverse())
+            {
+                answer += item;
+            }
+            return answer;
         }
 
         public int CountLinuxUsers(List<User> users)
