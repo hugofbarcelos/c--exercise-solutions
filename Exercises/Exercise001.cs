@@ -36,12 +36,8 @@ namespace Exercises
 
         public double AddVat(double originalPrice, double vatRate)
         {
-            // Replace the exception statement below with your code!
-            throw new NotImplementedException();
-
-            // NB: Look in Exercise001Tests.cs
-            //     There is a test with commented out assertions.
-            //     For an extra challenge, uncomment those assertions and make that test pass too.
+            double answer = originalPrice * (vatRate / 100 + 1);
+            return Math.Round(answer, 2);
         }
 
         public string Reverse(string sentence)
