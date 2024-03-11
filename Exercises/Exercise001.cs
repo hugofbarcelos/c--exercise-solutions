@@ -12,15 +12,26 @@ namespace Exercises
             string answer = word;
             string[] words = word.Split(' ');
 
-            if(String.IsNullOrEmpty(word)) return word;
+            if (String.IsNullOrEmpty(word)) return word;
             if (word == " ") return " ";
-            return answer.Replace(word.Substring(0, words[0].Length), words[0].Replace(word.Substring(0, 1), word.Substring(0, 1).ToUpper()));
+            return answer.Replace(
+                    word.Substring(0, words[0].Length),
+                    words[0].Replace(
+                        word.Substring(0, 1),
+                        word.Substring(0, 1).ToUpper())
+                   );
         }
 
         public string GenerateInitials(string firstName, string lastName)
         {
-            // Replace the exception statement below with your code!
-            throw new NotImplementedException();
+            char[] FirstLetter = firstName.Substring(0, 1)
+                                          .ToUpper()
+                                          .ToCharArray();
+            char[] LastLetter = lastName.Substring(0, 1)
+                                        .ToUpper()
+                                        .ToCharArray();
+
+            return FirstLetter[0] + "." + LastLetter[0];
         }
 
         public double AddVat(double originalPrice, double vatRate)
