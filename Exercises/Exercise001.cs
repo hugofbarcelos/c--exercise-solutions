@@ -43,9 +43,10 @@ namespace Exercises
 
         public string Reverse(string sentence)
         {
-            if (String.IsNullOrEmpty(sentence)) return sentence;
             char[] chars = sentence.ToCharArray();
             string answer = "";
+
+            if (String.IsNullOrEmpty(sentence)) return sentence;
             foreach (var item in chars.Reverse())
             {
                 answer += item;
